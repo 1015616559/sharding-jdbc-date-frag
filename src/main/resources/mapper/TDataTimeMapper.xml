@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.zero.shardingjdbcdate.mapper.TDataTimeMapper">
+
+    <insert id="addOne" useGeneratedKeys="true" keyProperty="id">
+        insert into t_data_time(id,t_name ,t_date) values(#{id},#{tName},#{tDate})
+    </insert>
+
+    <select id="getById" resultType="org.zero.shardingjdbcdate.entity.TDataTime">
+        select * from t_data_time where id=#{id}
+    </select>
+
+    <select id="getListByName" resultType="org.zero.shardingjdbcdate.entity.TDataTime">
+        select *  from t_data_time where t_name=${tName}
+    </select>
+
+</mapper>
